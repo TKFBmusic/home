@@ -17,7 +17,14 @@
 </head>
 
 <script>
+            //THE NUMBER
+    var prog =     18     ;
 
+    function setbar(num){
+        var pc = (num + "%");
+        document.getElementById("progbar").style.width = pc;
+        document.getElementById("percentlabel").innerHTML = pc;
+    }
 </script>
 
 <style>
@@ -32,7 +39,7 @@ body{
     display:grid;
     grid-template-columns: repeat(5,1fr);
     gap: 10px;
-    grid-auto-rows: minmax(300px, auto)
+    grid-auto-rows: minmax(200px, auto)
 }
 .one{
     grid-column: 1;
@@ -59,6 +66,15 @@ body{
     font-size: 40px;
     border-radius: 10px;
 }
+.five{
+    grid-column: 1 / 6;
+    grid-row: 4;
+    background-color: rgb(92, 87, 87);
+    height: 60px;
+    width: 80%;
+    margin:auto;
+    border-radius: 10px;
+}
 .info{
     margin:auto;
     background: rgba(255, 255, 255, 0.5);
@@ -66,13 +82,30 @@ body{
     padding:10px;
     font-size: 40px;
     margin-bottom: 10px;
-}
+} 
 .info > p{
     font-size: 20px;
 }
+#progbar{
+    background-color: greenyellow;
+    width:13%;
+    height:100%;
+    position:relative;
+    top: 0px;
+    margin:0%;
+    border-radius: 10px;
+    text-align: center;
+}
+#progbar > p{
+    position: relative;
+    display: inline;
+    font-size:40px;
+    color: black;
+    font-family: monospace
+}
 </style>
 
-<body>
+<body onload="setbar(prog);">
 <div class = "wrapper">
     <div class = "one"> 
         <img id="logo" src="https://tkfbmusic.github.io/home/brooklynlogo.png">
@@ -102,16 +135,17 @@ body{
     <div class = "four">
         News
     </div>
-
+    <div class = "five">
+        <div id = "progbar">
+            <p id = "percentlabel">13%</p>
+        </div>
+    </div>
 </div>
     
 
 <!--      TO DO:
 youtube embeds
-news on the side
-contact/collab info
 ALBUM PROGRESS BAR !!
 -->
 </body>
-
 </html>
