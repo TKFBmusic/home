@@ -21,31 +21,96 @@
 </script>
 
 <style>
-#mainHeader{
+#logo{
+    width:100%;
+}
+body{
+    background-image:url(https://www.nycgo.com/images/venues/158/brooklyn-bridge-photo-julienne-schaer-nyc-and-company-003-2__large.jpg);
+    background-size: cover;
+}
+.wrapper{
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(300px, auto)
+}
+.one{
+    grid-column: 1;
+    grid-row: 1;
+    filter: drop-shadow(10px 10px 4px #000000);
+}
+.two{
+    grid-column: 2 / 5;
+    grid-row: 1;
+    text-shadow: 2px 2px #000000;
+    color: #ffffff;
     font-size: 100px;
     text-align:center;
 }
-#logo{
-    position:absolute;
-    width:200px;
+.three{
+    grid-column: 1;
+    grid-row: 2 / 4;
 }
-body{
-    background-image:url(https://www1.nyc.gov/html/dot/images/infrastructure/brooklyn-bridge.jpg);
-    background-size: cover;
+.four{
+    grid-column: 2 / 5;
+    grid-row: 2 / 4;
+    background: rgba(255, 255, 255, 0.5);
+    padding:10px;
+    font-size: 40px;
+    border-radius: 10px;
+}
+.info{
+    margin:auto;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding:10px;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.info > p{
+    font-size: 20px;
 }
 </style>
 
 <body>
+<div class = "wrapper">
+    <div class = "one"> 
+        <img id="logo" src="https://tkfbmusic.github.io/home/brooklynlogo.png">
+    </div>
+    <div class = "two"> 
+        <header>The Kid From Brooklyn Music</header>
+    </div>
+    <div class = "three">
+        <div class = "info">
+            Contact
+            <p>
+                thekidfrombrooklynmusic@gmail.com
+                <br><br>
+                crobodile#0905
+            </p>
+        </div>
+        <div class = "info">
+            Links
+            <p>
+                <a href = "https://www.youtube.com/channel/UCKTClHQ95gmeSDbjV8d42hg">
+                    Youtube
+                </a>
+                
+            </p>
+        </div>
+    </div>
+    <div class = "four">
+        News
+    </div>
 
-    <img id="logo" src="https://tkfbmusic.github.io/home/brooklynlogo.png">
-    <header id="mainHeader">The Kid From Brooklyn Music</header>
+</div>
+    
 
 <!--      TO DO:
 youtube embeds
 news on the side
 contact/collab info
-better background image quality and no watermark
-
+ALBUM PROGRESS BAR !!
 -->
 </body>
 
