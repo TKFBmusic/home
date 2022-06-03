@@ -18,7 +18,7 @@
 
 <script>
             //THE NUMBER
-    var prog =     18     ;
+    var prog =     19     ;
     var likes = 0;
 
     function start(){
@@ -31,12 +31,14 @@
         document.getElementById("percentlabel").innerHTML = pc;
     };
     function getlikes(){
+        // Request the likes amount from the dedicated server
         var milliseconds = new Date();
         milliseconds = milliseconds.getTime();
         likes = Math.floor((milliseconds-1654219148970)/100);
         document.getElementById("likes").innerHTML = likes;
     };
     function likeClick(){
+        // Update amount of likes on the dedicated server
         likes++;
         document.getElementById("likes").innerHTML = likes;
     }
