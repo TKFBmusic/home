@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://TKFBmusic.github.io/home/">
     <meta property="og:description" content="Official The Kid From Brooklyn Music Website">
-    <meta property="og:image" content="https://TKFBmusic.github.io/home/brooklynlogo.png">
+    <meta property="og:image" content="https://TKFBmusic.github.io/home/brookylnlogo.png">
     
 <title>The Kid From Brooklyn Music</title>
 
@@ -19,11 +19,26 @@
 <script>
             //THE NUMBER
     var prog =     18     ;
+    var likes = 0;
 
+    function start(){
+        setbar(prog);
+        getlikes();
+    }
     function setbar(num){
         var pc = (num + "%");
         document.getElementById("progbar").style.width = pc;
         document.getElementById("percentlabel").innerHTML = pc;
+    };
+    function getlikes(){
+        var milliseconds = new Date();
+        milliseconds = milliseconds.getTime();
+        likes = Math.floor((milliseconds-1654219148970)/100);
+        document.getElementById("likes").innerHTML = likes;
+    };
+    function likeClick(){
+        likes++;
+        document.getElementById("likes").innerHTML = likes;
     }
 </script>
 
@@ -61,7 +76,7 @@ body{
 .four{
     grid-column: 2 / 5;
     grid-row: 2 / 4;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.7);
     padding:10px;
     font-size: 40px;
     border-radius: 10px;
@@ -80,7 +95,7 @@ body{
 }
 .info{
     margin:auto;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     padding:10px;
     font-size: 40px;
@@ -91,7 +106,7 @@ body{
 }
 #progbar{
     background-color: greenyellow;
-    width:13%;
+    width:0%;
     height:100%;
     position:relative;
     top: 0px;
@@ -112,9 +127,13 @@ body{
     position:relative;
     left:25%
 }
+#likes{
+    display:inline;
+    font-weight: bold;
+}
 </style>
 
-<body onload="setbar(prog);">
+<body onload="start()">
 <div class = "wrapper">
     <div class = "one"> 
         <img id="logo" src="./brooklynlogo.png">
@@ -140,6 +159,10 @@ body{
                 
             </p>
         </div>
+        <div class = "info">
+            Like <br>
+            <button onclick="likeClick()">👍</button> <p id = "likes">0</p>
+        </div>
     </div>
     <div class = "four">
         <p>News</p><br>
@@ -147,7 +170,7 @@ body{
     </div>
     <div class = "five">
         <div id = "progbar">
-            <p id = "percentlabel">13%</p>
+            <p id = "percentlabel">0%</p>
         </div>
     </div>
 </div>
