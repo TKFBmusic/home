@@ -32,7 +32,7 @@
     width:100%;
 }
 body{
-    background-image:url(https://www.nycgo.com/images/venues/158/brooklyn-bridge-photo-julienne-schaer-nyc-and-company-003-2__large.jpg);
+    background-image:url(./brooklyn\ bg.jpg);
     background-size: cover;
 }
 .wrapper{
@@ -65,6 +65,9 @@ body{
     padding:10px;
     font-size: 40px;
     border-radius: 10px;
+}
+.four > p{
+    display:inline;
 }
 .five{
     grid-column: 1 / 6;
@@ -103,12 +106,18 @@ body{
     color: black;
     font-family: monospace
 }
+.imgfit{
+    max-width:50%;
+    max-height:100%;
+    position:relative;
+    left:25%
+}
 </style>
 
 <body onload="setbar(prog);">
 <div class = "wrapper">
     <div class = "one"> 
-        <img id="logo" src="https://tkfbmusic.github.io/home/brooklynlogo.png">
+        <img id="logo" src="./brooklynlogo.png">
     </div>
     <div class = "two"> 
         <header>The Kid From Brooklyn Music</header>
@@ -133,7 +142,8 @@ body{
         </div>
     </div>
     <div class = "four">
-        News
+        <p>News</p><br>
+        <img class = "imgfit" src="./sneaker.png">
     </div>
     <div class = "five">
         <div id = "progbar">
