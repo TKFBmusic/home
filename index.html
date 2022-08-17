@@ -20,6 +20,7 @@
             //THE NUMBER
     var prog =     29.294812     ;
     var likes = 0;
+    var liked = false;
 
     function start(){
         setbar(prog);
@@ -39,8 +40,13 @@
     };
     function likeClick(){
         // Update amount of likes on the dedicated server
+        if(liked){
+            return;
+        };
         likes++;
         document.getElementById("likes").innerHTML = likes;
+        liked = true;
+        document.getElementById("likebutton").disabled = true;
     }
 </script>
 
@@ -167,7 +173,7 @@ body{
         </div>
         <div class = "info">
             Like <br>
-            <button onclick="likeClick()">👍</button> <p id = "likes">0</p>
+            <button id = "likebutton" onclick="likeClick()">👍</button> <p id = "likes">0</p>
         </div>
     </div>
     <div class = "four">
