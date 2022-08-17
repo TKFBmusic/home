@@ -18,7 +18,7 @@
 
 <script>
             //THE NUMBER
-    var prog =     19     ;
+    var prog =     29.294812     ;
     var likes = 0;
 
     function start(){
@@ -34,7 +34,7 @@
         // Request the likes amount from the dedicated server
         var milliseconds = new Date();
         milliseconds = milliseconds.getTime();
-        likes = Math.floor((milliseconds-1654219148970)/100);
+        likes = Math.floor((milliseconds-1654219148970)/100000000);
         document.getElementById("likes").innerHTML = likes;
     };
     function likeClick(){
@@ -83,8 +83,12 @@ body{
     font-size: 40px;
     border-radius: 10px;
 }
-.four > p{
+.four > header{
     display:inline;
+}
+.four > p{
+    font-size: 20px;
+    padding-left: 5%;
 }
 .five{
     grid-column: 1 / 6;
@@ -167,8 +171,9 @@ body{
         </div>
     </div>
     <div class = "four">
-        <p>News</p><br>
-        <img class = "imgfit" src="./sneaker.png"><br>
+        <header>News</header>
+        <p>cashino</p>       
+        <p>i wonder if cameron still checks</p>
     </div>
     <div class = "five">
         <div id = "progbar">
